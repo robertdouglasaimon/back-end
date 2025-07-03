@@ -1,0 +1,10 @@
+Fontes para código: "editor.fontFamily": "Fira Code",
+
+Configurações para rodar o php de boa no vscode:    
+"editor.fontLigatures": false,    
+"editor.fontSize": 14,    
+"editor.letterSpacing": 0.5,    
+"editor.lineHeight": 24,    
+"editor.autoIndent": "advanced",    
+"editor.snippetSuggestions": "bottom",    
+"intelephense.format.enable": true,    "intelephense.completion.triggerParameterHints": true ,    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,    "intelephense.completion.insertUseDeclaration": true,    "intelephense.trace.server": "messages"
