@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container central */
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    margin: 16rem 0px 0px 0px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card com os dados */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 0 0;
+}
+
+/* Título */
+.card h1 {
+    font-size: 1.8rem;
+    color: #00f7ff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Parágrafos e dados */
+.card p {
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 2px;
+}
+
+.card strong {
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 500;
+    padding: 6px 10px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-left: 4px solid #00f7ff;
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .card h1 {
+        font-size: 1.5rem;
+    }
+}
