@@ -45,27 +45,19 @@ Exemplo:
 */
 //------------------------------------------------//
 // Praticando Superglobais:
+$login = $_GET['login'];
+$senha = $_GET['senha'];
 
-// isset() - verifica se uma variável foi setada, mas ignora totalmente se tem ou não ou não valor.
-// Exemplo de uso:
-if (isset($_GET['campanha'])) {
-    $numero_campanha = $_GET['campanha'];
-    echo 'Você veio pela campanha ' . $numero_campanha; 
+if (!empty($_GET['login']) && isset($_GET['senha'])) {
+    echo "Parâmetros 'login' e 'senha' foram enviados. Conta logada.";
 } else {
-    echo ' Você não veio pela campanha - ';
+    echo "Parâmetro 'login' e 'senha' não foram enviados. Conta não logada.";
 }
 
-// empty() - verifica se a variavel foi setada e se tem ou não valor. 
-// Exemplo de uso:
-    if(empty($_GET['campanha'])) {
-        echo 'Nenhuma campanha foi escolhida';
-    }
+echo "<br>";
+echo "<br>";
 
-// var_dump() - exibe informações sobre uma variavel.
-// Exemplo de uso:
-echo "<pre>";
-    var_dump($_GET);
-echo "</pre>";
-
+echo "$login <br>"; 
+echo $senha;
 
 ?>
