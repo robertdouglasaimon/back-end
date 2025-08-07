@@ -12,6 +12,10 @@ if (!empty($_POST['usuario']) && !empty($_POST['senha'])) {
             $_SESSION['tema'] = $_POST['tema'];
         }
 
+        if (!empty($_POST['tema'])) {
+            setcookie('tema', htmlspecialchars($_POST['tema']));
+        }
+
         // Redirecionando para a página de bem-vindo do exercicio =D
         header("Location: welcome.php"); // Redirecionando para a página de bem-vindo.
         exit;

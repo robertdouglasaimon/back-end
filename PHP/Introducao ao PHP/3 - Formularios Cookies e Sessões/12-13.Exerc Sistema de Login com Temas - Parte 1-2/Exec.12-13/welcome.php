@@ -7,8 +7,9 @@ if(empty($_SESSION['usuario'])) {
   exit();
 }
 
-$tema = $_SESSION['tema'] ?? 'claro'; // Verificando se o tema foi escolhido pelo usuário
 
+$tema = $_SESSION['tema'] === 'escuro' ? $tema = 'escuro' : $tema = 'claro';
+// Verificando se o tema foi escolhido pelo usuário
 
 ?>
 
