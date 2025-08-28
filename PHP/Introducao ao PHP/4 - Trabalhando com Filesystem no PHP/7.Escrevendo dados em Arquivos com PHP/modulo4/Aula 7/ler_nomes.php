@@ -1,0 +1,44 @@
+<?php
+// Ultilizando a biblioteca filesystem do PHP -----
+// Comandos para ler arquivos:
+// fopen() - Abre um arquivo para leitura
+// fread() - Lê um arquivo
+// fclose() - Fecha um arquivo
+// feof() - Verifica se um arquivo chegou ao fim
+// fwrite() - Escreve em um arquivo
+// Resources - Recursos são ponteiros para arquivos.
+
+// Exemplo:
+// Comando fopen()
+// Chama um arquivo para leitura e retorna um recurso, por isso precisa ser armazenado em uma variável e é escrito:
+// fopen("arquivo.txt", "r"); 
+
+// Comando fread()
+// Lê um arquivo e retorna o conteúdo. Ao lado da váriavel temos a quantidade de bytes. Por isso precisa ser armazenado em uma variável e é escrito:
+// $conteudo = fread($arquivo, 30);
+
+// Comando fclose()
+// Fecha um arquivo aberto.
+// fclose($arquivo);
+
+// Comando feof()
+// Verifica se um arquivo chegou ao fim.
+// feof($arquivo);
+
+/*-----------------------------------------------*/
+// Praticando:
+
+// filesize() - Retorna o tamanho total de um arquivo.
+// fgets() - Lê uma linha de um arquivo.
+// eof() - Verifica se um arquivo chegou ao fim.
+// r - Leitura
+// w - Escrita
+// a - Adicionar
+
+$arquivo = fopen("nomes.txt", "a");
+
+fwrite($arquivo, "Novo conteúdo adicionado\n");
+
+
+fclose($arquivo);
+?>
