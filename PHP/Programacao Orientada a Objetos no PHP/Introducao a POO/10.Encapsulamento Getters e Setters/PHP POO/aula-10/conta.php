@@ -3,9 +3,11 @@ class Conta {
     // Atributos
 
     private int $saldo = 0;
+   
 
     // Metodos
-    public function __construct(int $saldo) {
+    public function __construct(int $saldo)
+    {
         $this -> saldo = $saldo;
     }
 
@@ -53,17 +55,26 @@ echo '<br>';
 class contaExercicio {
     // Atributos
     private int $saldo = 0;
+    private bool $chequeEspecial;
 
     // Metodos
-    public function __construct(int $saldo) {
+    public function __construct(int $saldo, bool $chequeEspecial = false) {
         $this -> saldo = $saldo;
+        $this -> chequeEspecial = $chequeEspecial;
     }
 
     public function sacar(int $valor) {
-        if ($valor > $this->saldo) {
+        if ($valor > $this->saldo && $this->chequeEspecial == false) {
             echo 'Você não tem saldo suficiente para sacar esse valor! <br>'; 
-            return;
+            return false;
         }
+
+
+        if($valor > $this->saldo + 100 && $this->chequeEspecial == true) {
+            echo 'Voce não pode sacar mais do que o valor do saldo + cheque especial (100)<br>';
+            return false;
+        }
+
         $this->saldo -= $valor;
         echo 'Você sacou: ' . $valor . '<br>';
     }
@@ -84,7 +95,8 @@ class contaExercicio {
     }
 }
 
-$contaExercicio = new ContaExercicio(0);
+$conta1Exercicio = new ContaExercicio(500);
+$conta2Exercicio = new ContaExercicio(500, true);
 
 // echo '<br>';
 // echo 'Seu saldo atual: ' . $contaExercicio -> verValorSaldo() . '<br>';
@@ -92,9 +104,9 @@ $contaExercicio = new ContaExercicio(0);
 echo '<br>';
 
 // Tentando depositar um valor maior que 100 para testar se a condição do exercício funciona:
-echo 'Valor bancário atual: ' . $contaExercicio ->verValorSaldo() . '<br>';
+echo 'Valor bancário atual: ' . $conta1Exercicio ->verValorSaldo() . '<br>';
 
-$contaExercicio -> depositar(102);
+$conta1Exercicio -> depositar(102);
 
 
 // 2. A pessoa só pode sacar valores se ela tiver saldo na conta, caso contrário diga que ela nao tem saldo suficiente.
@@ -102,6 +114,17 @@ $contaExercicio -> depositar(102);
 // Resolvendo o exericio:
 
 // Tentando sacar um valor maior que 0 para testar se a condição do exercício funciona:
-$contaExercicio -> sacar(100);
+// $conta1Exercicio -> sacar(100);
 
+echo '<br>';
+echo '<br>';
+
+
+// 3. Permitir que o usuário fique negativo com o banco com o cheque especial, no máximo de 100 reais.
+
+// Resolvendo o exericio:
+
+// Tentando sacar um valor maior que 0 para testar se a condição do exercício funciona:
+echo 'Valor bancário atual: ' . $conta2Exercicio ->verValorSaldo() . '<br>';
+$conta2Exercicio -> sacar(200);
 ?>
